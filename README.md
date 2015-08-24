@@ -1,4 +1,4 @@
-![Whumph](https://raw.github.com/flovan/whumph/whumph.png)
+![Whumph](https://raw.githubusercontent.com/flovan/whumph/master/whumph.png)
 
 #Whumph.js v0.0.1
 
