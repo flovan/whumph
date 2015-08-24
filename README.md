@@ -43,7 +43,7 @@ Trigger an event.
 
 ##### `.off()`
 
-This is rarely used and can be easily implemented in the library when needed. Otherwise, just use a `forEach()` of a singular `.removeEventListener()`.
+This is rarely used and can be easily implemented in the library when needed. Otherwise, just use `.removeEventListener()`.
 
 ##### `.addClass()`, `.removeClass()`, `.hasClass()`
 
@@ -53,7 +53,7 @@ See the [classList docs](https://developer.mozilla.org/en-US/docs/Web/API/Elemen
 ##### `.attr()`, `.hasAttr()`
 
 Just use `.setAttribute()` and `.hasAttribute()`.
-Note that these need to be called on `Node` typed objects, not `NodeList`. `.forEach()` is your friend here.
+Note that these need to be called on `Node` typed objects, not `NodeList`. [forEach()](https://github.com/flovan/whumph#foreachcallback-this) is your friend here.
 
 ##### `.next()`, `.prev()`, `.parent()`
 
