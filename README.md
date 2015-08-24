@@ -1,13 +1,69 @@
-![whumph](https://raw.github.com/flovan/whumph/whumph.png)
+![Whumph](https://raw.github.com/flovan/whumph/whumph.png)
 
-#whumph.js v0.0.1
+#Whumph.js v0.0.1
 
-A JS primer with a tiny foot print. Based on [bling.js](https://gist.github.com/paulirish/12fb951a8b893a454b32). 
-~1KB minified and gzipped.
+A JS primer with a tiny foot print.
+~0.5KB minified and gzipped.
+
+## Credits
+
+Included the inlined [Classlist](https://github.com/eligrey/classList.js) polyfill.
+Based on [bling.js](https://gist.github.com/paulirish/12fb951a8b893a454b32).
 
 ## API
 
-WIP
+### `$(selector)`
+
+Grabs one matching element with `document.querySelector`.  
+Returns a `Node`.
+
+### `$$(selector)`
+
+Grabs all matching elements with `document.querySelectorAll`.  
+Returns a `NodeList`.
+
+### `.forEach(callback[, this])`
+
+Loop over `NodeList` types.  
+See the [forEach docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach?redirectlocale=en-US&redirectslug=JavaScript%2FReference%2FGlobal_Objects%2FArray%2FforEach).
+
+### `.closest(selector)`
+
+Find a `Node`s' closest element by matching the selector to its siblings and ancestors.
+
+> **Note:** Not available on `NodeList`s since that doesn't make much sense.
+
+### `.on(name, callback)`
+
+Bind an event listener.
+
+### `.trigger(name)`
+
+Trigger an event.
+
+## Why is there no ...
+
+### `.off()`
+
+This is rarely used and can be easily implemented in the library when needed. Otherwise, just use a `forEach()` of a singular `.removeEventListener()`.
+
+### `.addClass()`, `.removeClass()`, `.hasClass()`
+
+Whumph includes a polyfill for [classList](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList), which is just as easy to use.  
+See the [classList docs](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList).
+
+### `.attr()`, `.hasAttr()`
+
+Just use `.setAttribute()` and `.hasAttribute()`.
+Note that these need to be called on `Node` typed objects, not `NodeList`. `.forEach()` is your friend here.
+
+### `.next()`, `.prev()`, `.parent()`
+
+Just use `.previousElementSibling`, `.nextElementSibling` and `.parentNode`.
+
+### <insert other jQuery feature>
+
+[You might not need jQuery](http://youmightnotneedjquery.com).
 
 ## Browser support
 
