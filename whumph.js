@@ -1,4 +1,4 @@
-//  whump.js 0.0.1
+//  whump.js 0.0.2
 //  https://github.com/flovan/whumph
 //  (c) 2015-whateverthecurrentyearis Florian Vanthuyne
 //  Whumph may be freely distributed under the MIT license.
@@ -6,13 +6,9 @@
 (function (w, d) {
 	'use strict';
 
-	///////////////////////////////////////////////////////////////////////////
-	//                                                                       //
-	// LIB                                                                   //
-	//                                                                       //
-	///////////////////////////////////////////////////////////////////////////
+	// LIB --------------------------------------------------------------------
 
-	// Assign qSA to $ to mimix jQuery
+	// Assign qSA to $ to mimic jQuery
 	w.$ = d.querySelector.bind(d);
 	w.$$ = d.querySelectorAll.bind(d);
 
@@ -22,6 +18,7 @@
 
 	// Provide a "closest" method
 	Node.prototype.closest = function (selector) {
+		var elem = this;
 		var firstChar = selector.charAt(0);
 
 		// Get closest match
@@ -38,7 +35,7 @@
 		        if (elem.id === selector.substr(1)) {
 		            return elem;
 		        }
-		    } 
+		    }
 
 		    // If selector is a data attribute
 		    if (firstChar === '[') {
@@ -72,14 +69,9 @@
 		this.dispatchEvent(new CustomEvent(name, { details: data || {} }));
 	};
 
-	///////////////////////////////////////////////////////////////////////////
-	//                                                                       //
-	// POLYFILLS                                                             //
-	//                                                                       //
-	///////////////////////////////////////////////////////////////////////////
+	// POLYFILLS --------------------------------------------------------------
 
 	// Custom Event for `.trigger()`
-
 	function CustomEvent (name, params) {
 		var evt = document.createEvent('CustomEvent');
 

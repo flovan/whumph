@@ -1,4 +1,4 @@
-![Whumph](https://raw.githubusercontent.com/flovan/whumph/master/whumph.png) v0.0.1
+![Whumph](https://raw.githubusercontent.com/flovan/whumph/master/whumph.png) v0.0.2
 
 A JS primer for modern web projects with a tiny foot print.  
 ~0.5KB minified and gzipped.
@@ -71,5 +71,7 @@ IE9+, Chrome 39+, Safari 8+, Opera 26+, FF 35+
 
 ## Changelog
 
+* **0.0.2**
+  * Fixed a bug with `closest()`, code cleanup
 * **0.0.1**
   * First commit, WIP
