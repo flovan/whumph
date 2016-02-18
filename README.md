@@ -80,6 +80,10 @@ IE9+, Chrome 39+, Safari 8+, Opera 26+, FF 35+
 
 > **Note:** Modern browser support will probably be better than listed above. If you tested an earlier version, feel free to send a PR with updated versions.
 
+## Plugins
+
+* [ajax](https://github.com/flovan/whumph/tree/master/plugins/ajax)
+
 ## Changelog
 
 * **0.0.2**

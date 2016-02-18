@@ -1,6 +1,6 @@
-[whumph.ajax.js](https://github.com/flovan/whumph/plugins/ajax) v0.0.1
+# [whumph.ajax.js](https://github.com/flovan/whumph/tree/master/plugins/ajax) v0.0.1
 
-An extensions for Whumph providing some syntax sugar for XMLHttpRequests.  
+An extensions for [Whumph](https://github.com/flovan/whumph) providing some syntax sugar for XMLHttpRequests.  
 ~0.9KB minified and gzipped.
 
 ## Credits
