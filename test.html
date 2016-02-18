@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Whumph Test</title>
+</head>
+<body>
+	<h1>Test</h1>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam maxime nihil inventore, quas adipisci numquam quo velit, mollitia tempora, aspernatur deserunt sequi vitae fugiat! Optio consequuntur, facilis rerum reiciendis sapiente.</p>
+	<div class="test">
+		<p><button>Test 1</button></p>
+		<p><button>Test 2</button></p>
+	</div>
+
+	<!-- SCRIPT -->
+
+	<script src="whumph.js"></script>
+	<script src="whumph.ajax.js"></script>
+	<script>
+		console.log('Running Whump tests');
+		console.log('------------');
+
+		console.log('Find out when the DOM is ready');
+		$.ready(function () { console.log('DOM is ready!'); });
+		console.log('------------');
+
+		console.log('Extend a simple object with another one:');
+		console.log({foo: 'bar'});
+		console.log({bar: 'foo'});
+		console.log($.extend({foo: 'bar'}, {bar: 'foo'}));
+		console.log('------------');
+
+		console.log('Selecting a single element:');
+		console.log($('h1'));
+		console.log('------------');
+
+		console.log('Selecting a single element on a context element:');
+		console.log($('button', $('.test')));
+		console.log('------------');
+
+		console.log('Selecting multiple elements:');
+		console.log($$('p'));
+		console.log('------------');
+
+		console.log('Finding the closest element to another element');
+		console.log($('button').closest('.test'));
+		console.log('------------');
+
+		console.log('Add a click listener to a single <button>');
+		$('button').on('click', function () { console.log('"click" triggered on a single button'); });
+		$('button').click();
+		console.log('------------');
+
+		console.log('Add a click listener to all <button> elements');
+		console.log($$('button'));
+		$$('button').on('click', function (e) { console.log('"click" triggered on button', e.currentTarget); });
+		$$('button').forEach(function (b) { b.click(); });
+		console.log('------------');
+
+		console.log('Listen for and dispatch a custom "lolwut" event from a single <button>');
+		$('button').on('lolwut', function () { console.log('"lolwut" triggered on a single button'); });
+		$('button').trigger('lolwut');
+		console.log('------------');
+
+		console.log('Attempt a GET ajax request to this page');
+		$.ajax('test.html?lol=wut&shit=piss', {
+			success: function (data) {
+				console.log('The request succeeded', data.substr(0, 50) + '...');
+			},
+			error: function (err) {
+				console.log('The request failed', err);
+			}
+		});
+		console.log('------------');
+
+		console.log('Attempt a GET ajax request to this page with additional data that overrides url parameters');
+		$.ajax('test.html?lol=wut', {
+			data: {
+				lol: 'hihi',
+				wut: 'yes'
+			},
+			success: function (data) {
+				console.log('The request succeeded', data.substr(0, 50) + '...');
+			},
+			error: function (err) {
+				console.log('The request failed', err);
+			}
+		});
+		console.log('------------');
+
+		// console.log('');
+		// console.log();
+		// console.log('------------');
+	</script>
+</body>
+</html>

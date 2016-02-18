@@ -1,12 +1,17 @@
 ![Whumph](https://raw.githubusercontent.com/flovan/whumph/master/whumph.png) v0.0.2
 
 A JS primer for modern web projects with a tiny foot print.  
-~0.5KB minified and gzipped.
+~1.9KB minified and gzipped.
 
 ## Credits
 
-Included the inlined [Classlist](https://github.com/eligrey/classList.js) polyfill.  
-Based on [bling.js](https://gist.github.com/paulirish/12fb951a8b893a454b32).
+Pieced together with the help of:
+- [bling.js](https://gist.github.com/paulirish/12fb951a8b893a454b32)
+- [bliss.js](https://github.com/LeaVerou/bliss)
+
+Using the following polyfills (inlined):
+- [Classlist](https://github.com/eligrey/classList.js)
+- [closest/matches](https://github.com/jonathantneal/closest)
 
 ## API
 
@@ -24,6 +29,12 @@ Returns a `NodeList`.
 
 Loop over `NodeList` types.  
 See the [forEach docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach?redirectlocale=en-US&redirectslug=JavaScript%2FReference%2FGlobal_Objects%2FArray%2FforEach).
+
+##### `.matches(selector)`
+
+Checks if an element matches the provided selector (think jQuery's `is()`).
+
+> **Note:** Not available on `NodeList`s since that doesn't make much sense.
 
 ##### `.closest(selector)`
 
@@ -72,6 +83,7 @@ IE9+, Chrome 39+, Safari 8+, Opera 26+, FF 35+
 ## Changelog
 
 * **0.0.2**
-  * Fixed a bug with `closest()`, code cleanup
+  * Restructuring and rewrite based on [bliss.js](https://github.com/LeaVerou/bliss)
+  * Fixed a bug with `closest()`
 * **0.0.1**
   * First commit, WIP
